@@ -1,0 +1,55 @@
+plugins {
+    alias(libs.plugins.android.application)
+}
+
+android {
+    namespace 'cn.qcyrj.dailyrecordpro'
+    compileSdk 36
+
+    defaultConfig {
+        applicationId "cn.qcyrj.dailyrecordpro"
+        minSdk 24
+        targetSdk 36
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_11
+        targetCompatibility JavaVersion.VERSION_11
+    }
+    buildFeatures {
+        viewBinding false
+    }
+}
+
+dependencies {
+    implementation libs.appcompat
+    implementation libs.richeditor.android
+    implementation libs.glide
+    implementation libs.material
+    implementation libs.constraintlayout
+    implementation libs.lifecycle.livedata.ktx
+    implementation libs.lifecycle.viewmodel.ktx
+    implementation libs.navigation.fragment
+    implementation libs.navigation.ui
+    implementation libs.androidx.swiperefreshlayout
+
+    implementation libs.gson
+
+    compileOnly libs.lombok  // 添加Lombok依赖
+    annotationProcessor libs.lombok  // 添加注解处理器
+
+
+    testImplementation libs.junit
+    androidTestImplementation libs.ext.junit
+    androidTestImplementation libs.espresso.core
+}
