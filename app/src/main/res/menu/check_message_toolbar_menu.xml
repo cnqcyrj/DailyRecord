@@ -1,0 +1,36 @@
+<menu xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/checkMessage_preserve"
+        android:title="保存数据"
+        android:icon="@drawable/preserve"
+        app:showAsAction="always"/>
+    <item
+        android:id="@+id/manage"
+        android:title="管理"
+        android:icon="@drawable/manage"
+        app:showAsAction="always"/>
+    <item
+        android:id="@+id/font_size"
+        android:title="字体间距"
+        android:icon="@drawable/font_size"
+        app:showAsAction="always"
+        tools:ignore="AlwaysShowAction" />
+    <item
+        android:id="@+id/checkMessage_action_setup"
+        android:title="应用设置"
+        app:showAsAction="never"/>
+    <item
+        android:id="@+id/checkMessage_action_update_date"
+        android:title="更新日期"
+        app:showAsAction="never"/>
+    <item
+        android:id="@+id/checkMessage_action_delete_permanent"
+        android:title="永久删除"
+        app:showAsAction="never"/>
+    <item
+        android:id="@+id/checkMessage_action_delete"
+        android:title="放回收站"
+        app:showAsAction="never"/>
+</menu>

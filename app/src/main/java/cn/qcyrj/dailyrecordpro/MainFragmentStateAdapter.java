@@ -1,14 +1,12 @@
 package cn.qcyrj.dailyrecordpro;
 
-import android.widget.TextView;
-
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.viewpager2.adapter.FragmentStateAdapter;
 
 import cn.qcyrj.dailyrecordpro.ui.dashboard.DashboardFragment;
 import cn.qcyrj.dailyrecordpro.ui.home.HomeFragment;
-import cn.qcyrj.dailyrecordpro.ui.setup.SetUpFragment;
+import cn.qcyrj.dailyrecordpro.ui.user.UserFragment;
 
 public class MainFragmentStateAdapter extends FragmentStateAdapter {
 
@@ -22,7 +20,7 @@ public class MainFragmentStateAdapter extends FragmentStateAdapter {
             case 1:
                 return new DashboardFragment();
             case 2:
-                return new SetUpFragment();
+                return new UserFragment();
             case 0:
             default:
                 return new HomeFragment();

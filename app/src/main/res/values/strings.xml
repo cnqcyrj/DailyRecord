@@ -3,4 +3,18 @@
     <string name="title_home">主页</string>
     <string name="title_dashboard">面板</string>
     <string name="title_user">用户</string>
+    <string name="underline">下划线</string>
+    <string name="strikethrough">删除线</string>
+    <string name="boldface">粗体</string>
+    <string name="fab_insert_image">添加图片</string>
+    <string name="italic_type">斜体</string>
+    <string name="center">居中</string>
+    <string name="left_justify">左对齐</string>
+    <string name="right_justify">右对齐</string>
+    <string name="ordered_list">有序列表</string>
+    <string name="unordered_list">无序列表</string>
+    <string name="cancel">撤销</string>
+    <string name="rework">重做</string>
+    <string name="title">请输入标题...</string>
+    <string name="checkMessage_title">默认标题</string>
 </resources>

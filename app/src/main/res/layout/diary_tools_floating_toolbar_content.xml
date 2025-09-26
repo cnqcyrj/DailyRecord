@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    
+    <Button
+        android:id="@+id/boldface"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/boldface"
+        app:icon="@drawable/boldface"
+        style="?attr/materialIconButtonStyle" />
+    <Button
+        android:id="@+id/italic_type"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/italic_type"
+        app:icon="@drawable/italic_type"
+        style="?attr/materialIconButtonStyle" />
+    <Button
+        android:id="@+id/underline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/underline"
+        app:icon="@drawable/underline"
+        style="?attr/materialIconButtonStyle" />
+        
+    <Button
+        android:id="@+id/strikethrough"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/strikethrough"
+        app:icon="@drawable/strikethrough"
+        style="?attr/materialIconButtonStyle" />
+    <Button
+        android:id="@+id/left_justify"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/left_justify"
+        app:icon="@drawable/left_justify"
+        style="?attr/materialIconButtonStyle" />
+    <Button
+        android:id="@+id/center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/center"
+        app:icon="@drawable/center"
+        style="?attr/materialIconButtonStyle" />
+    <Button
+        android:id="@+id/right_justify"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/right_justify"
+        app:icon="@drawable/right_justify"
+        style="?attr/materialIconButtonStyle" />
+    <Button
+        android:id="@+id/ordered_list"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/ordered_list"
+        app:icon="@drawable/ordered_list"
+        style="?attr/materialIconButtonStyle" />
+    <Button
+        android:id="@+id/unordered_list"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/unordered_list"
+        app:icon="@drawable/unordered_list"
+        style="?attr/materialIconButtonStyle" />
+    <Button
+        android:id="@+id/cancel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/cancel"
+        app:icon="@drawable/cancel"
+        style="?attr/materialIconButtonStyle" />
+    <Button
+        android:id="@+id/rework"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/rework"
+        app:icon="@drawable/rework"
+        style="?attr/materialIconButtonStyle" />
+</merge>

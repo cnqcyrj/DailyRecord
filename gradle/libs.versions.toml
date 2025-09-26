@@ -15,6 +15,7 @@ navigationUi = "2.9.2"
 richeditorAndroid = "2.0.0"
 swiperefreshlayoutVersion = "1.1.0"
 lombok = "1.18.30"  # 添加Lombok版本
+toaster = "13.6"
  [libraries]
 glide = { module = "com.github.bumptech.glide:glide", version.ref = "glide" }
 gson = { module = "com.google.code.gson:gson", version.ref = "gson" }
@@ -31,7 +32,7 @@ navigation-ui = { group = "androidx.navigation", name = "navigation-ui", version
 richeditor-android = { module = "jp.wasabeef:richeditor-android", version.ref = "richeditorAndroid" }
 androidx-swiperefreshlayout = { group = "androidx.swiperefreshlayout", name = "swiperefreshlayout", version.ref = "swiperefreshlayoutVersion" }
 lombok = { group = "org.projectlombok", name = "lombok", version.ref = "lombok" }  # 添加Lombok依赖
-
+toaster = { module = "com.github.getActivity:Toaster", version.ref = "toaster" }
  [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
 

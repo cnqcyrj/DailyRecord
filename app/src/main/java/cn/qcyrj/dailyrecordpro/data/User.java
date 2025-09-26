@@ -9,6 +9,7 @@ import lombok.NoArgsConstructor;
 public class User {
     private String username;
     private String password;
+    private boolean isLogin;
     private boolean isAutoPreserveDiary;
     private boolean isAutoUpdateData;
     private boolean isAutoSortDiary;
