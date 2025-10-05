@@ -17,4 +17,5 @@
     <string name="rework">重做</string>
     <string name="title">请输入标题...</string>
     <string name="checkMessage_title">默认标题</string>
+    <string name="addNote">添加日记</string>
 </resources>

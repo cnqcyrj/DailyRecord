@@ -6,14 +6,12 @@ import android.view.Gravity;
 import com.google.gson.Gson;
 import com.hjq.toast.Toaster;
 import com.hjq.toast.style.CustomToastStyle;
-import com.hjq.toast.style.WhiteToastStyle;
 
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 
 import cn.qcyrj.dailyrecordpro.R;
-import cn.qcyrj.dailyrecordpro.data.Diary;
 import cn.qcyrj.dailyrecordpro.data.User;
 public class Start {
     public static void init(){
@@ -51,6 +49,6 @@ public class Start {
     }
     private static void initDate(){
         DataOperate.baseLoadData();
-
+        HomeOperate.baseLoadData();
     }
 }

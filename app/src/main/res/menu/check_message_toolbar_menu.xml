@@ -13,7 +13,7 @@
         app:showAsAction="always"/>
     <item
         android:id="@+id/font_size"
-        android:title="字体间距"
+        android:title="字体大小"
         android:icon="@drawable/font_size"
         app:showAsAction="always"
         tools:ignore="AlwaysShowAction" />

@@ -1,24 +1,24 @@
 package cn.qcyrj.dailyrecordpro.activity;
 
 import android.os.Bundle;
-import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Button;
-import android.widget.FrameLayout;
 import android.widget.LinearLayout;
-import android.widget.ScrollView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+
 import com.google.android.material.appbar.MaterialToolbar;
-import com.google.android.material.floatingtoolbar.FloatingToolbarLayout;
+import com.google.android.material.textfield.TextInputEditText;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Objects;
 
 import cn.qcyrj.dailyrecordpro.R;
+import cn.qcyrj.dailyrecordpro.data.Diary;
+import cn.qcyrj.dailyrecordpro.tools.DataOperate;
 import cn.qcyrj.dailyrecordpro.tools.Tools;
 import jp.wasabeef.richeditor.RichEditor;
 
@@ -28,6 +28,9 @@ public class MessageActivity extends AppCompatActivity implements Toolbar.OnMenu
     private final List<LinearLayout> toolbarLayouts=new ArrayList<>();
 
     private int toolbarLayoutIndex = 0;
+
+    private TextInputEditText title;
+
     private boolean isEdit = false;
     public void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
@@ -35,20 +38,20 @@ public class MessageActivity extends AppCompatActivity implements Toolbar.OnMenu
         MaterialToolbar toolbar = findViewById(R.id.checkMessage_toolbar);
         toolbar.setNavigationOnClickListener(v -> finish());//设置返回
         toolbar.setOnMenuItemClickListener(this);
+        title = findViewById(R.id.checkMessage_title);
         editor = findViewById(R.id.editor);
         editor.setPlaceholder("请输入内容...");
         editor.setFontSize(18);
-        editor.setPadding(50,10,50,0);
-        setOnClick(R.id.floating_toolbar_child_top);
+        editor.setPadding(35, 10, 35, 0);
+        editor.setOnTextChangeListener(this);
         setOnClick(R.id.floating_toolbar_child_bottom);
         setOnClick(R.id.floating_toolbar_child_left);
         setOnClick(R.id.floating_toolbar_child_right);
         toolbarLayouts.add(findViewById(R.id.floating_toolbar_left));
         toolbarLayouts.add(findViewById(R.id.floating_toolbar_right));
-        toolbarLayouts.add(findViewById(R.id.floating_toolbar_top));
         toolbarLayouts.add(findViewById(R.id.floating_toolbar_bottom));
+        toolbarLayoutIndex = DataOperate.getToolbarIndex();
         showToolbarLayout();
-
     }
     public void setOnClick(int id){
         LinearLayout toolbarLayout = findViewById(id);
@@ -67,6 +70,7 @@ public class MessageActivity extends AppCompatActivity implements Toolbar.OnMenu
         if (toolbarLayoutIndex >= toolbarLayouts.size()+1) {
             toolbarLayoutIndex = 0;
         }
+        DataOperate.updateToolbarIndex(toolbarLayoutIndex);
         showToolbarLayout();
     }
 
@@ -75,8 +79,6 @@ public class MessageActivity extends AppCompatActivity implements Toolbar.OnMenu
             toolbarLayout.setVisibility(toolbarLayoutIndex == toolbarLayouts.indexOf(toolbarLayout) ? View.VISIBLE : View.GONE);
         }
     }
-
-
 
 
 
@@ -123,7 +125,6 @@ public class MessageActivity extends AppCompatActivity implements Toolbar.OnMenu
         }
     }
 
-
     @Override
     public boolean onMenuItemClick(MenuItem item) {
         if (item.getItemId() == R.id.manage) {
@@ -135,7 +136,8 @@ public class MessageActivity extends AppCompatActivity implements Toolbar.OnMenu
     @Override
     public void finish() {
         if(isEdit){
-            Tools.showToast("修改成功");
+            DataOperate.saveData(new Diary(Objects.requireNonNull(title.getText()).toString(), editor.getHtml(), Tools.getCurrentTime(), Tools.getCurrentTime()));
+            Tools.showToast("保存成功");
         }
         super.finish();
         overridePendingTransition(R.anim.scale_in,
@@ -145,5 +147,6 @@ public class MessageActivity extends AppCompatActivity implements Toolbar.OnMenu
     @Override
     public void onTextChange(String text) {
         isEdit = true;
+        Tools.showToast("已修改");
     }
 }
