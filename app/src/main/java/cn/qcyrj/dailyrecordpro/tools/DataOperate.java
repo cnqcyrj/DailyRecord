@@ -59,6 +59,7 @@ public class DataOperate {
 
     public static void saveData(Diary  diary) {
         try {
+            DiaryList.getInstance().getDiaryList().add(diary);
             index++;
             dataJson.put(index+"", index);
             dataJson.put("index", index);

@@ -20,7 +20,6 @@ import androidx.recyclerview.widget.StaggeredGridLayoutManager;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.imageview.ShapeableImageView;
 import com.google.android.material.tabs.TabLayout;
 import com.google.android.material.textfield.TextInputEditText;
 
@@ -35,12 +34,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
     private RecyclerView recyclerView;
     private DiaryAdapter adapter;
     private TextInputEditText searchEditText;
-
-    private ShapeableImageView changeView;
-
     private TabLayout tabLayout;
-
-
     private boolean isListView = HomeOperate.getViewType();
     private void startActivity(View sourceView) {
         Context context = requireContext();
@@ -55,7 +49,6 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
 
     @SuppressLint("ClickableViewAccessibility")
     private void initView(View view) {
-
         recyclerView = view.findViewById(R.id.diaryList);
         searchEditText = view.findViewById(R.id.searchEditText);
         tabLayout = view.findViewById(R.id.tabLayout);
@@ -81,12 +74,10 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
             public void onTabSelected(TabLayout.Tab tab) {
                 clearFocusAndHideKeyboard();
             }
-
             @Override
             public void onTabUnselected(TabLayout.Tab tab) {
                 clearFocusAndHideKeyboard();
             }
-
             @Override
             public void onTabReselected(TabLayout.Tab tab) {
                 clearFocusAndHideKeyboard();
@@ -119,8 +110,13 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
     @SuppressLint("NotifyDataSetChanged")
     public void update() {
         adapter.setDiaryList(DiaryList.getInstance().getDiaryList());
-        adapter.notifyDataSetChanged();
-        recyclerView.setAdapter(adapter);
+    }
+
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        update();
     }
 
     private void setupRecyclerView() {
@@ -133,7 +129,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
             StaggeredGridLayoutManager staggeredGridLayoutManager = new StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL);
             recyclerView.setLayoutManager(staggeredGridLayoutManager);
         }
-        update();
+        recyclerView.setAdapter(adapter);
     }
 
 

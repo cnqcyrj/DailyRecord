@@ -39,14 +39,12 @@ public class DiaryViewHolder extends RecyclerView.ViewHolder {
         // 处理图片显示
 //        if (diary.hasImage()) {
 //            ivDiaryImage.setVisibility(View.VISIBLE);
-//            // 使用Glide加载图片
-//            Glide.with(itemView.getContext())
-//                    .load(new File(diary.getImagePath()))
-//                    .placeholder(R.drawable.placeholder)
-
-
-//                    .error(R.drawable.error)
-//                    .into(ivDiaryImage);
+        // 使用Glide加载图片
+        // Glide.with(itemView.getContext())
+        //        .load(new File(diary.getImagePath()))
+        //        .placeholder(R.drawable.placeholder)
+        //        .error(R.drawable.error)
+        //        .into(ivDiaryImage);
 //        } else {
 //            ivDiaryImage.setVisibility(View.GONE);
 //        }
@@ -70,5 +68,6 @@ public class DiaryViewHolder extends RecyclerView.ViewHolder {
         }
         // 设置时间
         tvDiaryTime.setText(diary.getCreateTime());
+        tvDiaryTime.setVisibility(View.VISIBLE);
     }
 }

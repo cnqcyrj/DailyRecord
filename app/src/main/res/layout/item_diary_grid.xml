@@ -1,41 +1,71 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_margin="8dp"
-    android:background="@drawable/diary_item_background"
-    android:clickable="true"
-    android:orientation="vertical"
-    android:padding="12dp">
+    app:cardCornerRadius="12dp"
+    app:cardElevation="4dp">
 
-    <!-- 图片显示区域 -->
-    <ImageView
-        android:id="@+id/iv_diary_image"
-        android:layout_width="match_parent"
-        android:layout_height="120dp"
-        android:scaleType="centerCrop"
-        android:visibility="gone" />
-
-    <!-- 内容区域，限制最大高度 -->
-    <TextView
-        android:id="@+id/tv_diary_content"
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:ellipsize="end"
-        android:maxHeight="120dp"
-        android:maxLines="6"
-        android:textColor="@color/black"
-        android:textSize="14sp" />
+        android:padding="12dp">
 
-    <!-- 时间 -->
-    <TextView
-        android:id="@+id/tv_diary_time"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:textAlignment="textEnd"
-        android:textColor="@color/gray"
-        android:textSize="10sp" />
+        <!-- 左上角标签占位 -->
+        <TextView
+            android:id="@+id/tv_top_left"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:textSize="12sp"
+            android:visibility="gone" />
 
-</LinearLayout>
+        <!-- 右下角 ShapeableImageView 占位 -->
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/siv_bottom_right"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:scaleType="centerCrop"
+            android:visibility="gone"
+            app:shapeAppearanceOverlay="@style/ShapeAppearance.MaterialComponents.SmallComponent" />
+
+        <!-- 图片显示区域 -->
+        <ImageView
+            android:id="@+id/iv_diary_image"
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            android:layout_below="@id/tv_top_left"
+            android:scaleType="centerCrop"
+            android:visibility="gone" />
+
+        <!-- 内容区域，限制最大高度 -->
+        <TextView
+            android:id="@+id/tv_diary_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/iv_diary_image"
+            android:layout_marginTop="8dp"
+            android:ellipsize="end"
+            android:maxHeight="120dp"
+            android:maxLines="6"
+            android:textColor="@color/black"
+            android:textSize="14sp" />
+
+        <!-- 时间 -->
+        <TextView
+            android:id="@+id/tv_diary_time"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_diary_content"
+            android:layout_marginTop="8dp"
+            android:textAlignment="textEnd"
+            android:textColor="@color/gray"
+            android:textSize="10sp" />
+
+    </RelativeLayout>
+
+</com.google.android.material.card.MaterialCardView>
